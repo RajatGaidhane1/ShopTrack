@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">MyShopCart</string>
+    <string name="update_item">Update Item</string>
+    <string name="add_item">Add Item</string>
+</resources>

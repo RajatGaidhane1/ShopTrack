@@ -10,15 +10,11 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Scaffold
-
 import androidx.compose.material.ScaffoldState
 import androidx.compose.material.Text
-import androidx.compose.material.TextFieldColors
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.rememberScaffoldState
 import androidx.compose.material3.Button
-
-
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -31,122 +27,114 @@ import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import eu.tutorials.mywishlistapp.AppBarView
 import eu.tutorials.mywishlistapp.R
-import eu.tutorials.mywishlistapp.data.Wish
+import eu.tutorials.mywishlistapp.data.Item
+import eu.tutorials.mywishlistapp.ui.theme.ItemViewModel
 import kotlinx.coroutines.launch
-
 
 @Composable
 fun AddEditDetailView(
     id: Long,
-    viewModel: WishViewModel,
+    viewModel: ItemViewModel,
     navController: NavController
-){
-
-    val snackMessage = remember{
-        mutableStateOf("")
-    }
+) {
+    val snackMessage = remember { mutableStateOf("") }
     val scope = rememberCoroutineScope()
     val scaffoldState = rememberScaffoldState()
-    if (id != 0L){
-        val wish = viewModel.getAWishById(id).collectAsState(initial = Wish(0L, "", ""))
-        viewModel.wishTitleState = wish.value.title
-        viewModel.wishDescriptionState = wish.value.description
-    }else{
-        viewModel.wishTitleState = ""
-        viewModel.wishDescriptionState = ""
+
+    if (id != 0L) {
+        val item = viewModel.getAnItemById(id).collectAsState(initial = Item(0L, "", ""))
+        viewModel.itemTitleState = item.value.title
+        viewModel.itemDescriptionState = item.value.description
+    } else {
+        viewModel.itemTitleState = ""
+        viewModel.itemDescriptionState = ""
     }
 
     Scaffold(
-        topBar = {AppBarView(title =
-        if(id != 0L) stringResource(id = R.string.update_wish)
-        else stringResource(id = R.string.add_wish)
-        ) {navController.navigateUp()}
+        topBar = {
+            AppBarView(
+                title = if (id != 0L) stringResource(id = R.string.update_item)
+                else stringResource(id = R.string.add_item)
+            ) { navController.navigateUp() }
         },
         scaffoldState = scaffoldState
     ) {
-        Column(modifier = Modifier
-            .padding(it)
-            .wrapContentSize(),
+        Column(
+            modifier = Modifier
+                .padding(it)
+                .wrapContentSize(),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
-        ){
+        ) {
             Spacer(modifier = Modifier.height(10.dp))
 
-            WishTextField(label = "Title",
-                value = viewModel.wishTitleState,
-                onValueChanged = {
-                    viewModel.onWishTitleChanged(it)
-                } )
+            ItemTextField(
+                label = "Title",
+                value = viewModel.itemTitleState,
+                onValueChanged = { viewModel.onItemTitleChanged(it) }
+            )
 
             Spacer(modifier = Modifier.height(10.dp))
 
-            WishTextField(label = "Description",
-                value = viewModel.wishDescriptionState,
-                onValueChanged = {
-                    viewModel.onWishDescriptionChanged(it)
-                } )
+            ItemTextField(
+                label = "Quantity",
+                value = viewModel.itemDescriptionState,
+                onValueChanged = { viewModel.onItemDescriptionChanged(it) }
+            )
 
             Spacer(modifier = Modifier.height(10.dp))
+
             androidx.compose.material.Button(onClick = {
-                if (viewModel.wishTitleState.isNotEmpty() &&
-                    viewModel.wishDescriptionState.isNotEmpty()
+                if (viewModel.itemTitleState.isNotEmpty() &&
+                    viewModel.itemDescriptionState.isNotEmpty()
                 ) {
                     if (id != 0L) {
-                        viewModel.updateWish(
-                            Wish(
+                        viewModel.updateItem(
+                            Item(
                                 id = id,
-                                title = viewModel.wishTitleState.trim(),
-                                description = viewModel.wishDescriptionState.trim()
+                                title = viewModel.itemTitleState.trim(),
+                                description = viewModel.itemDescriptionState.trim()
                             )
                         )
                     } else {
-                        //  AddWish
-                        viewModel.addWish(
-                            Wish(
-                                title = viewModel.wishTitleState.trim(),
-                                description = viewModel.wishDescriptionState.trim()
+                        viewModel.addItem(
+                            Item(
+                                title = viewModel.itemTitleState.trim(),
+                                description = viewModel.itemDescriptionState.trim()
                             )
                         )
-                        snackMessage.value = "Wish has been created"
+                        snackMessage.value = "Item has been created"
                     }
                 } else {
-                    //
-                    snackMessage.value = "Enter fields to create a wish"
+                    snackMessage.value = "Enter fields to create an item"
                 }
+
                 scope.launch {
-                    //scaffoldState.snackbarHostState.showSnackbar(snackMessage.value)
                     navController.navigateUp()
                 }
 
             }) {
                 androidx.compose.material3.Text(
-                    text = if (id != 0L) stringResource(id = R.string.update_wish)
-                    else stringResource(
-                        id = R.string.add_wish
-                    ),
-                    style = TextStyle(
-                        fontSize = 18.sp
-                    )
+                    text = if (id != 0L) stringResource(id = R.string.update_item)
+                    else stringResource(id = R.string.add_item),
+                    style = TextStyle(fontSize = 18.sp)
                 )
             }
         }
     }
-
 }
 
-
 @Composable
-fun WishTextField(
+fun ItemTextField(
     label: String,
     value: String,
     onValueChanged: (String) -> Unit
-){
+) {
     OutlinedTextField(
         value = value,
         onValueChange = onValueChanged,
@@ -154,18 +142,13 @@ fun WishTextField(
         modifier = Modifier.fillMaxWidth(),
         keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Text),
         colors = TextFieldDefaults.outlinedTextFieldColors(
-            // using predefined Color
             textColor = Color.Black,
-            // using our own colors in Res.Values.Color
             focusedBorderColor = colorResource(id = R.color.black),
             unfocusedBorderColor = colorResource(id = R.color.black),
             cursorColor = colorResource(id = R.color.black),
             focusedLabelColor = colorResource(id = R.color.black),
             unfocusedLabelColor = colorResource(id = R.color.black),
         )
-
-
     )
 }
-
 

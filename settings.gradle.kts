@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "MyWishListApp"
-include(":app")
+rootProject.name = "MyShopCartApp"
+include(":MyShopCart")
  

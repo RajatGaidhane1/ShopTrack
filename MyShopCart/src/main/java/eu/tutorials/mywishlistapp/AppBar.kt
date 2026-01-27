@@ -22,7 +22,7 @@ fun AppBarView(
 )
 {
     val navigationIcon : (@Composable () -> Unit)? =
-        if(!title.contains("Wishlist")){
+        if(!title.contains("Shopping list")){
             // Day 13, 209.
             {
                 IconButton(onClick = { onBackNavClicked() }) {
@@ -40,7 +40,7 @@ fun AppBarView(
 
     TopAppBar(title = {
         androidx.compose.material.Text(
-            "Wishlist",
+            "Shopping List",
             color = colorResource(id = R.color.white),
             modifier = Modifier
                 .padding(start = 4.dp)
@@ -50,8 +50,6 @@ fun AppBarView(
         elevation = 3.dp,
         backgroundColor = colorResource(id = R.color.app_bar_color),
         navigationIcon = navigationIcon
-
-
         )
 
 
