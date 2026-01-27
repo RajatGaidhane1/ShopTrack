@@ -1,9 +1,9 @@
-package eu.tutorials.mywishlistapp.data
+package eu.rajat.myshopcart.data
 
 
 import android.content.Context
 import androidx.room.Room
-import eu.tutorials.mywishlistapp.ui.theme.ItemDatabase
+import eu.rajat.myshopcart.ui.theme.ItemDatabase
 
 object Graph {
     lateinit var database: ItemDatabase

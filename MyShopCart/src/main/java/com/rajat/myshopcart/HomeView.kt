@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp
+package eu.rajat.myshopcart
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -35,10 +35,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import eu.tutorials.mywishlistapp.data.DummyItem
-import eu.tutorials.mywishlistapp.data.Item
-import eu.tutorials.mywishlistapp.ui.theme.Screen
-import eu.tutorials.mywishlistapp.ui.theme.ItemViewModel
+import eu.rajat.myshopcart.data.Item
+import eu.rajat.myshopcart.ui.theme.Screen
+import eu.rajat.myshopcart.ui.theme.ItemViewModel
 
 
 @OptIn(ExperimentalMaterialApi::class)

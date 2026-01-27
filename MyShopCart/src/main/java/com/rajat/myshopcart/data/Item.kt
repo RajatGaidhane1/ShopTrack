@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp.data
+package eu.rajat.myshopcart.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -9,10 +9,10 @@ data class Item(
     @PrimaryKey(autoGenerate = true)
     val id: Long = 0L,
 
-    @ColumnInfo(name = "Wish-Title")
+    @ColumnInfo(name = "Item-Title")
     val title: String = "",
 
-    @ColumnInfo(name = "Wish-Desc")
+    @ColumnInfo(name = "Item-Desc")
     val description: String = ""
 )
 

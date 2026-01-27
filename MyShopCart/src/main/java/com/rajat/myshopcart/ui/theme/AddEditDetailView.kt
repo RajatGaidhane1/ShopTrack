@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp.ui.theme
+package eu.rajat.myshopcart.ui.theme
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,11 +10,8 @@ import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.OutlinedTextField
 import androidx.compose.material.Scaffold
-import androidx.compose.material.ScaffoldState
-import androidx.compose.material.Text
 import androidx.compose.material.TextFieldDefaults
 import androidx.compose.material.rememberScaffoldState
-import androidx.compose.material3.Button
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.mutableStateOf
@@ -30,10 +27,9 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import eu.tutorials.mywishlistapp.AppBarView
-import eu.tutorials.mywishlistapp.R
-import eu.tutorials.mywishlistapp.data.Item
-import eu.tutorials.mywishlistapp.ui.theme.ItemViewModel
+import eu.rajat.myshopcart.AppBarView
+import eu.rajat.myshopcart.R
+import eu.rajat.myshopcart.data.Item
 import kotlinx.coroutines.launch
 
 @Composable

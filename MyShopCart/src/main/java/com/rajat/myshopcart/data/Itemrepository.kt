@@ -1,6 +1,6 @@
-package eu.tutorials.mywishlistapp.data
+package eu.rajat.myshopcart.data
 
-import eu.tutorials.mywishlistapp.ui.theme.ItemDao
+import eu.rajat.myshopcart.ui.theme.ItemDao
 import kotlinx.coroutines.flow.Flow
 
 class ItemRepository(private val itemDao: ItemDao) {

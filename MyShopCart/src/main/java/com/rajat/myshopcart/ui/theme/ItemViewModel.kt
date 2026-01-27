@@ -1,13 +1,13 @@
-package eu.tutorials.mywishlistapp.ui.theme
+package eu.rajat.myshopcart.ui.theme
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import eu.tutorials.mywishlistapp.data.Graph
-import eu.tutorials.mywishlistapp.data.Item
-import eu.tutorials.mywishlistapp.data.ItemRepository
+import eu.rajat.myshopcart.data.Graph
+import eu.rajat.myshopcart.data.Item
+import eu.rajat.myshopcart.data.ItemRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch

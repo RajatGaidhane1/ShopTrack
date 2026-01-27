@@ -1,9 +1,9 @@
-package eu.tutorials.mywishlistapp
+package com.rajat.myshopcart
 
 import android.app.Application
-import eu.tutorials.mywishlistapp.data.Graph
+import com.rajat.myshopcart.data.Graph
 
-class WishListApp: Application() {
+class `MyShopCartApp`: Application() {
     override fun onCreate() {
         super.onCreate()
         Graph.provide(this)

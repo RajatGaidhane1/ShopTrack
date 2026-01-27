@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp
+package eu.rajat.myshopcart
 
 import org.junit.Test
 

@@ -1,8 +1,8 @@
-package eu.tutorials.mywishlistapp.ui.theme
+package eu.rajat.myshopcart.ui.theme
 
 import androidx.room.Database
 import androidx.room.RoomDatabase
-import eu.tutorials.mywishlistapp.data.Item
+import eu.rajat.myshopcart.data.Item
 
 @Database(
     entities = [Item::class],

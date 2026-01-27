@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp.ui.theme
+package eu.rajat.myshopcart.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

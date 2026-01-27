@@ -1,4 +1,4 @@
-package eu.tutorials.mywishlistapp.ui.theme
+package eu.rajat.myshopcart.ui.theme
 
 import androidx.compose.runtime.Composable
 import androidx.lifecycle.viewmodel.compose.viewModel
@@ -7,8 +7,7 @@ import androidx.navigation.NavType
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.navArgument
-import eu.tutorials.mywishlistapp.HomeView
-import eu.tutorials.mywishlistapp.ui.theme.ItemViewModel
+import eu.rajat.myshopcart.HomeView
 
 @Composable
 fun Navigation(
