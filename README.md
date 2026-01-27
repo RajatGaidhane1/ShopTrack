@@ -1,92 +1,127 @@
-# Wishlist
+# MyShopCart
 
 **Android-only Kotlin app — Jetpack Compose · MVVM · Room · Kotlin Flow**
 
-A simple, offline-first wishlist application built with modern Android tooling. Focused on clarity, maintainability, and easy extensibility — ideal as a learning project or portfolio piece.
+A clean, offline-first shopping list application built with modern Android development practices. Designed for clarity, maintainability, and portfolio-ready structure — ideal as a learning project or production prototype.
 
 ---
 
-## Key features
-- Create, edit, and delete wishes (CRUD).  
-- Reactive UI using `StateFlow` / `Flow` for immediate updates.  
-- Local, offline-first persistence with Room (Entity / DAO).  
-- Navigation with Jetpack Navigation (navigation-compose).  
-- MVVM architecture with a Repository layer for clean separation of concerns.
+## Key Features
+- Add, update, and delete items (full CRUD functionality).  
+- Reactive UI using `StateFlow` / `Flow` for instant updates.  
+- Local persistence with Room (Entity / DAO).  
+- Smooth navigation using Jetpack Navigation (`navigation-compose`).  
+- MVVM architecture with a Repository layer for clean separation of concerns.  
+- Offline-first: fully functional without an internet connection.
 
 ---
 
-## Tech stack
+## Tech Stack
 Kotlin · Jetpack Compose · MVVM · Room · Kotlin Flow · Jetpack Navigation · Android Studio · Gradle · Git
 
 ---
 
-## Quick start
+## Quick Start
+
 ```bash
-git clone https://github.com/RajatGaidhane1/Wishlist_App.git
-cd Wishlist_App
+git clone https://github.com/RajatGaidhane1/MyShopCart.git
+cd MyShopCart
 
 1. Open the project in Android Studio (Arctic Fox or later recommended).
 2. Let Gradle sync and download dependencies.
 3. Run on an emulator or physical device (API 21+).
 
-Project layout (overview)
+Project Layout (overview)
 
+# MyShopCart
+
+**Android-only Kotlin app — Jetpack Compose · MVVM · Room · Kotlin Flow**
+
+A clean, offline-first shopping list application built with modern Android development practices. Designed for clarity, maintainability, and portfolio-ready structure — ideal as a learning project or production prototype.
+
+---
+
+## Key Features
+- Add, update, and delete items (full CRUD functionality).  
+- Reactive UI using `StateFlow` / `Flow` for instant updates.  
+- Local persistence with Room (Entity / DAO).  
+- Smooth navigation using Jetpack Navigation (`navigation-compose`).  
+- MVVM architecture with a Repository layer for clean separation of concerns.  
+- Offline-first: fully functional without an internet connection.
+
+---
+
+## Tech Stack
+Kotlin · Jetpack Compose · MVVM · Room · Kotlin Flow · Jetpack Navigation · Android Studio · Gradle · Git
+
+---
+
+## Quick Start
+
+```bash
+git clone https://github.com/RajatGaidhane1/MyShopCart.git
+cd MyShopCart
+
+1. Open the project in Android Studio (Arctic Fox or later recommended).
+2. Let Gradle sync and download dependencies.
+3. Run on an emulator or physical device (API 21+).
+Project Layout (overview)
 /app
-  /src/main/java/com/yourpackage
-    /ui           # Compose screens & components
+  /src/main/java/com/rajat/myshopcart
+    /ui           # Compose screens & UI components
     /viewmodel    # ViewModels exposing StateFlow
     /data
-      /local      # Room database, WishDao, WishEntity
-    /repository   # Data access abstraction
+      /local      # Room database, ItemDao, Item entity
+    /repository   # Repository for data access abstraction
   /res
 AndroidManifest.xml
 build.gradle
-
-## Example snippets
-
-## Sample ViewModel
-
-fun addWish(wish: Wish){
-        viewModelScope.launch(Dispatchers.IO) {
-            wishRepository.addAWish(wish= wish)
-        }
+Example Snippets
+ViewModel
+fun addItem(item: Item){
+    viewModelScope.launch(Dispatchers.IO) {
+        itemRepository.addAWish(wish = item)
     }
+}
 
-    fun deleteWish(wish: Wish){
-        viewModelScope.launch(Dispatchers.IO) {
-            wishRepository.deleteAWish(wish= wish)
-            getAllWishes = wishRepository.getWishes()
-        }
+fun deleteItem(item: Item){
+    viewModelScope.launch(Dispatchers.IO) {
+        itemRepository.deleteAWish(wish = item)
+        getAllItems = itemRepository.getWishes()
     }
-
-## Sample Dao
-
+}
+Sample DAO
 @Dao
-abstract class WishDao {
+abstract class ItemDao {
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    abstract suspend fun addAWish(wishEntity: Wish)
+    abstract suspend fun addAWish(itemEntity: Item)
 
-    // Loads all wishes from the wish table
-    @Query("Select * from `wish-table`")
-    abstract fun getAllWishes(): Flow<List<Wish>>
+    @Query("SELECT * FROM `item-table`")
+    abstract fun getAllWishes(): Flow<List<Item>>
 
     @Update
-    abstract suspend fun updateAWish(wishEntity: Wish)
+    abstract suspend fun updateAWish(itemEntity: Item)
+}
+Sample Repositoryclass WishRepository(private val itemDao: ItemDao) {
 
-## Sample Repository
-
-class WishRepository(private val wishDao: WishDao) {
-
-    suspend fun addAWish(wish:Wish){
-        wishDao.addAWish(wish)
+    suspend fun addAWish(item: Item){
+        itemDao.addAWish(item)
     }
 
-    fun getWishes(): Flow<List<Wish>> = wishDao.getAllWishes()
+    fun getWishes(): Flow<List<Item>> = itemDao.getAllWishes()
 
-## Contributing
+    suspend fun updateAWish(item: Item){
+        itemDao.updateAWish(item)
+    }
+
+    suspend fun deleteAWish(item: Item){
+        itemDao.deleteAWish(item)
+    }
+}
+Contributing
 This is a personal learning project (sole developer). Contributions and suggestions are welcome:
-Fork the repo
+Fork the repository
 Create a feature branch: feat/your-feature
 Commit your changes and open a Pull Request
 Suggested improvements:
@@ -94,11 +129,8 @@ Search & filtering, categories/tags
 Cloud sync (Firebase / REST) for cross-device persistence
 Unit & UI tests, CI (GitHub Actions)
 Accessibility enhancements and localization
-
 Contact
 Built by Rajat Gaidhane — GitHub: RajatGaidhane1
-
-
 
 
 
