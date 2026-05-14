@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle

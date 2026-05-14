@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

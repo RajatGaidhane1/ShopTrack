@@ -1,9 +1,9 @@
-package eu.rajat.myshopcart.data
+package com.rajat.myshopcart.data
 
 
 import android.content.Context
 import androidx.room.Room
-import eu.rajat.myshopcart.ui.theme.ItemDatabase
+import com.rajat.myshopcart.ui.theme.ItemDatabase
 
 object Graph {
     lateinit var database: ItemDatabase

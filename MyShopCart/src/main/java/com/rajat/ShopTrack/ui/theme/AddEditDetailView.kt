@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,9 +27,10 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
-import eu.rajat.myshopcart.AppBarView
-import eu.rajat.myshopcart.R
-import eu.rajat.myshopcart.data.Item
+import com.rajat.ShopTrack.R
+import com.rajat.myshopcart.AppBarView
+import com.rajat.myshopcart.data.Item
+//import com.rajat.mywishlistapp.R
 import kotlinx.coroutines.launch
 
 @Composable

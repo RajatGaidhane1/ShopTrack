@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "eu.tutorials.mywishlistapp"
+    namespace = "com.rajat.ShopTrack"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "eu.tutorials.mywishlistapp"
+        applicationId = "com.rajat.ShopTrack"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

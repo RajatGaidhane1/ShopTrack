@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart
+package com.rajat.myshopcart
 
 import org.junit.Test
 

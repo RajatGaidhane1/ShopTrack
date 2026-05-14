@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart
+package com.rajat.myshopcart
 
 import android.widget.Toast
 import androidx.compose.animation.animateColorAsState
@@ -35,9 +35,9 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
-import eu.rajat.myshopcart.data.Item
-import eu.rajat.myshopcart.ui.theme.Screen
-import eu.rajat.myshopcart.ui.theme.ItemViewModel
+import com.rajat.myshopcart.data.Item
+import com.rajat.myshopcart.ui.theme.Screen
+import com.rajat.myshopcart.ui.theme.ItemViewModel
 
 
 @OptIn(ExperimentalMaterialApi::class)
@@ -50,7 +50,7 @@ fun HomeView(
     Scaffold(
         topBar = {
             AppBarView("Item List") {
-                Toast.makeText(context, "Button works", Toast.LENGTH_LONG).show()
+                Toast.makeText(context, "", Toast.LENGTH_LONG).show() //"button works"
             }
         },
 

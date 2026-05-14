@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 sealed class Screen (val route: String){
     object HomeScreen: Screen("home_screen")

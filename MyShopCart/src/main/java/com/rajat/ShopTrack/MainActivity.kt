@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart
+package com.rajat.myshopcart.ui
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -9,8 +9,8 @@ import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import eu.rajat.myshopcart.ui.theme.MyWishListAppTheme
-import eu.rajat.myshopcart.ui.theme.Navigation
+import com.rajat.myshopcart.ui.theme.MyWishListAppTheme
+import com.rajat.myshopcart.ui.theme.Navigation
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

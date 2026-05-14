@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,8 +6,8 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
-import eu.rajat.myshopcart.data.Item
-//import eu.rajat.mywishlistapp.data.Wish
+import com.rajat.myshopcart.data.Item
+//import com.rajat.mywishlistapp.data.Wish
 import kotlinx.coroutines.flow.Flow
 
 @Dao

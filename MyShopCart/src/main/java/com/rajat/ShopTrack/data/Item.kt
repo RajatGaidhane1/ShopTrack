@@ -1,4 +1,4 @@
-package eu.rajat.myshopcart.data
+package com.rajat.myshopcart.data
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

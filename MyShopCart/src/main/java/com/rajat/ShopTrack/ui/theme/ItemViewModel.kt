@@ -1,13 +1,13 @@
-package eu.rajat.myshopcart.ui.theme
+package com.rajat.myshopcart.ui.theme
 
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import eu.rajat.myshopcart.data.Graph
-import eu.rajat.myshopcart.data.Item
-import eu.rajat.myshopcart.data.ItemRepository
+import com.rajat.myshopcart.data.Graph
+import com.rajat.myshopcart.data.Item
+import com.rajat.myshopcart.data.ItemRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
@@ -54,7 +54,7 @@ class ItemViewModel(
     fun deleteItem(item: Item) {
         viewModelScope.launch(Dispatchers.IO) {
             itemRepository.deleteAnItem(item) // was deleteAWish()
-            getAllItems = itemRepository.getItems() // was getWishes()
+          //  getAllItems = itemRepository.getItems() // was getWishes()
         }
     }
 }
