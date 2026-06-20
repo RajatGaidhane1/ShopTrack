@@ -2,11 +2,6 @@
 
 > An offline-first Android shopping list app built with Kotlin, Jetpack Compose, and MVVM architecture.
 
-<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 03 53 AM" src="https://github.com/user-attachments/assets/3580f986-e091-4fa7-a026-12cac7c9efab" />
-<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 03 58 AM" src="https://github.com/user-attachments/assets/d8465c15-e83c-4af0-9dfe-242b650df156" />
-<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 04 26 AM" src="https://github.com/user-attachments/assets/92ccdd9d-640e-4eb6-a726-0f0caf533570" />
-
-
 ---
 
 ## Overview
@@ -139,11 +134,10 @@ cd ShopTrack
 
 ## Screenshots
 
-> _Add screenshots here — suggested: Home list screen, Add item screen, Edit item screen_
 
 | Home Screen | Add Item | Edit Item |
 |---|---|---|
-| `screenshot_home.png` | `screenshot_add.png` | `screenshot_edit.png` |
+| `<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 03 53 AM" src="https://github.com/user-attachments/assets/3580f986-e091-4fa7-a026-12cac7c9efab" />` | `<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 03 58 AM" src="https://github.com/user-attachments/assets/d8465c15-e83c-4af0-9dfe-242b650df156" />` | `<img width="1440" height="900" alt="Screenshot 2026-05-15 at 12 04 26 AM" src="https://github.com/user-attachments/assets/92ccdd9d-640e-4eb6-a726-0f0caf533570" />` |
 
 ---
 
